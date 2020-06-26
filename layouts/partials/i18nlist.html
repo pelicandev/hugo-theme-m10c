@@ -1,4 +1,4 @@
-{{ if .IsTranslated }}
+{{ if and (.IsTranslated) (.Site.Params.lang.sitch_enabled) }}
   {{ partial "icon.html" (dict "ctx" $ "name" "flag") }} 
     {{ range .Translations }}
         <a href="{{ .Permalink }}">{{ .Lang }}</a>

@@ -25,7 +25,7 @@
           <a target="_blank" href="{{ .url }}" rel="noreferrer noopener">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
         {{ end }}
       </div>
-      {{ if .IsTranslated }}
+      {{ if and (.IsTranslated) (.Site.Params.lang.sitch_enabled) }}
         <nav class="LangNav">
         {{ range .Translations }}
           <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
