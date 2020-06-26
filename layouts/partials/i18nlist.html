@@ -1,0 +1,17 @@
+{{ if .IsTranslated }}
+  {{ partial "icon.html" (dict "ctx" $ "name" "flag") }} 
+    {{ range .Translations }}
+        <a href="{{ .Permalink }}">{{ .Lang }}</a>
+    {{ end }}
+{{ end }}
+
+<!-- {{ if .IsTranslated }}
+<h4>{{ i18n "translations" }}</h4>
+<ul>
+    {{ range .Translations }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Lang }}: {{ .Title }}{{ if .IsPage }} ({{ i18n "wordCount" . }}){{ end }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }} -->
